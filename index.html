@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/f96da0e956.js" crossorigin="anonymous"></script>
+    <title>Accounts</title>
+</head>
+<style>
+    ::-webkit-scrollbar {
+  width: 2px;
+  /* border-radius: 2px */
+}
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+</style>
+<body class="flex justify-center bg-gray-100">
+    <main class="max-w-[375px] min-w-[245px] w-[100%]  h-[100vh] p-4 relative bg-white rounded-xl">
+        <div class = "h-[35vh]">
+            <div class="">
+                <div class="text-center text-2xl">
+                    <h1>Overview</h1>
+                </div>
+                <div>
+                    <h1 class="text-xl">Accounts</h1>
+                </div>
+                <div class="flex justify-between p-2">
+                    <span>Credit</span>
+                    <span id="creditValue" class="text-green-500 font-bold"></span>
+                </div>
+                <div class="flex justify-between p-2">
+                    <span>Debit</span>
+                    <span id='debitValue' class="text-red-500 font-bold"></span>
+                </div>
+            </div>
+            <div id="myExpenses" class="my-2">
+                <div class="w-[100%] border-2 bg-gray-200 h-[2rem] rounded-md my-2 relative">
+                    <div class="rounded-md bg-red-600 h-[100%]" id="expenseTracker"></div>
+                </div>
+                <div class="flex justify-end">
+                    <span id = "credit-debit" class="text-gray-500 p-2">$0.00</span>
+                </div>
+            </div>
+        </div>
+        <hr class="h-[1px] w-[100%] bg-black">
+        </hr>
+        
+        <div>
+            <h1 class="text-xl">HISTORY</h1>
+            <div id="historyContainer" class="h-[56vh] overflow-y-auto ">
+                
+            </div>
+        </div>
+        <div id='addButton'
+            class="rounded-[50%] bg-orange-400 absolute bottom-4 right-4 h-[3rem] w-[3rem] text-white flex items-center justify-center cursor-pointer">
+            <i class="fa fa-plus text-4xl" aria-hidden="true"></i>
+        </div>
+        <div class="inputBoxContainer absolute bottom-0 left-0 right-0 z-10 bg-white">
+            <div id="inputBox" class="hidden p-4">
+                <div class="float-right font-bold hover:cursor-pointer" id="closeButton">X</div>
+                <div>
+                    <p class="text-md">Text</p>
+                    <input class="px-2 focus:outline-none border-[1px] border-gray-400 my-2 " id="text"
+                        placeholder="Enter Text" /><br>
+                    <p class="text-md">Amount (negative-expense, positive-income)</p>
+                    <input class="px-2 focus:outline-none border-[1px] border-gray-400 my-2" id="amount"
+                        placeholder="Enter Amount" />
+                    <button id="addTransaction" class="w-[100%] bg-blue-600 text-white p-2 my-2">Add
+                        transaction</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="index.js"></script>
+
+</html>
